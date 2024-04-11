@@ -1,0 +1,868 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0.75rem 0;
+}
+
+/* Utility Classes */
+.container {
+    padding: 2rem 0;
+    overflow: hidden;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+.form-header {
+    color: #ff4800;
+    border-bottom: 1px solid #333;
+    padding: 20px 0;
+    margin-bottom: 40px;
+}
+
+.bg-color {
+    background-color: #fff4f0;
+}
+.text-center {
+    text-align: center;
+}
+
+.form-title {
+    margin-bottom: 20px;
+}
+.form-button {
+    width: 100%;
+}
+.form-button:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
+hr {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.l-heading {
+    font-size: 4rem;
+    text-align: left;
+    line-height: 1.1;
+}
+
+.input_size{
+    position: absolute;
+    width: 20%;
+}
+
+.lead {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    color: #fff;
+    background: #ff4800;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 20px;
+}
+.btn:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
+.btn-dark {
+    color: #333;
+}
+
+
+.list {
+    margin: 0.5rem 0;
+    list-style: none;
+}
+
+.list li {
+    padding: 0.5rem 0;
+    border-bottom: #444 dotted 1px;
+}
+
+
+
+
+
+
+
+
+/* Navbar Section */
+#navbar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    justify-content: space-between;
+    z-index: 12;
+    padding: 1rem;
+    
+}
+
+
+#navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+
+
+#navbar ul li a{
+    padding: 0.75rem;
+    margin: 0 0.25rem;
+}
+
+
+#navbar ul li a:hover {
+    background: #ff4800;
+    color: #fff;
+    border-radius: 20px;
+}
+
+#navbar .log {
+    width: 180px;
+}
+
+#showcase {
+    color: #fff;
+    background: #333;
+    padding: 2rem;
+    position: relative;
+}
+
+#showcase:before {
+    content: '';
+    background: url('../img/_119955696_d620980e-a25c-49b8-aa5b-f0afc4da816d.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+}
+
+#showcase .showcase-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin-left: 90px; 
+}
+
+.showcase-content {
+    margin-right: 30rem;
+    margin-top: 15rem;
+    z-index: 1;
+}
+
+
+
+
+
+
+/* News Articles */
+/* SlideShow Section */
+.slideshow-container {
+    max-width: 1200px;
+    max-width: 80%;
+    margin: auto;
+}
+
+.slideshow-container #news-title {
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    padding: 40px 0 0 0;
+}
+
+.slideshow-container #news-title h3 {
+    font-size: 1.5rem;
+    padding-top: 3px;
+    align-self: center;
+}
+
+
+.slideshow-container .what {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.slideshow-container .what img {
+    width: 40%;
+    border-radius: 20px;
+}
+.slideshow-container .what .news-text {
+    padding-right: 2rem;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 140%;
+  padding: 20px 29px;
+  color: #fff;
+  background-color: #ff4800;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 50%;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 50%;
+}
+.prev {
+    left: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    color: #fff;
+    background-color: #333;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+
+
+
+/* About Us Section */
+#about-us {
+    background-color: #fff4f0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+#about-us-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: space-between;
+}
+
+#about-us-content h2 {
+    padding-top: 0.5rem;
+}
+
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+
+#ready {
+    padding: 5rem 11rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#ready button{
+    font-size: 100%;
+}
+#ready p {
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+
+
+
+/* This is the PopUp design */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 2px solid #f0f0f0;
+    border-radius: 20px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+  
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+  
+.modal-header {
+    padding: 10px 15px;
+    margin: 1rem 2rem;
+    align-items: center;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+
+}
+  
+.modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+  
+.modal .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-left: 92%;
+}
+  
+.modal-body {
+    display: flex;
+    padding: 10px 15px;
+    justify-content: space-evenly;    
+
+}
+
+.modal i {
+    font-size: smaller;
+    padding: 1rem;
+    text-align: center;
+}
+  
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+  
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+#overlay2 {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+  
+#overlay2.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+
+
+
+
+
+
+
+
+/* This is the Section For User's Input of Amount */
+.results-container-amount {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: 200ms ease-in-out;
+    position: fixed;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.results-container-amount.active {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.results-container-amount .form-control {
+    margin-bottom: 3px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.results-container-amount .form-control label {
+    display: inline-block;
+    margin: 20px 10px;
+    padding: 2px;
+}
+.results-container-amount .form-control p{
+    display: inline-block;
+}
+
+.results-container-amount .form-control:first-child input {
+    border: 2px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+    width: 50%;
+    outline: none;
+}
+
+/* This little code is to remove the up and down 
+arrow on the number inputs */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.results-container-amount .form-control.success input {
+    border-color: #2ecc71;
+}
+
+.results-container-amount .form-control.error input {
+    border-color: #e74c3c;
+}
+
+.results-container-amount .form-control small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.results-container-amount .form-control.error small {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+/* This is the grid like structure for the Donation Page(The Amount Section) */
+.results-container-amount .form-section {display: flex; }
+/* .results-container-amount .form .form-section .form-control:nth-child(2) div:first-child */
+.results-container-amount .form .form-section .form-control{
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 10px; */
+    /* padding-bottom: 20px; */
+    position: relative;
+    margin-left: 10px;
+}
+.results-container-amount .form .form-section .form-control:nth-child(1){flex: 1;}
+
+
+
+
+
+
+
+
+
+
+
+/* Donation As "Not Anonymous" Section */
+.form-container-donate {
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 600px;
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    margin: 4% auto 0;
+    text-align: left;
+    margin-bottom:20px;
+}
+
+.form-container-donate .form-section  {
+    display: flex;
+    
+}
+
+/* This sections creates the grid-like structure for the Donation Page */
+/* The firstchild of elements in Each Form-section */
+.form-container-donate .form .form-section .form-control:nth-child(1){
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.form-container-donate .form .form-section .form-control:nth-child(1) label{flex: 100%; }
+.form-container-donate .form .form-section  .form-control:nth-child(1) input {
+    flex: 1;
+    margin-right: 0.5rem;
+}
+.form-container-donate .form .form-section .form-control:nth-child(1) #expmonth {flex: 1;}
+.form-container-donate .form .form-section .form-control:nth-child(2) {flex: 1;}
+
+
+/* The is for the Bank Cards */
+.icon-container {
+    padding-top: 7px;
+    font-size: 24px;
+}
+
+
+
+.form-container-donate .form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-container-donate .form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-container-donate .form-control.success input {
+    border-color: #2ecc71;
+}
+
+.form-container-donate .form-control.error input {
+    border-color: #e74c3c;
+}
+
+.form-container-donate .form-control small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.form-container-donate .form-control.error small {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-container-donate .form-control textarea {
+    border: 2px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    resize: none;
+}
+
+.form-container-donate.active {
+    transform: translate(-50%, -50%) scale(0);
+    display: none;
+}
+
+.form-container-donate button, 
+.form-container-donate2 button {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.bottomlink{
+    margin-left: 9rem; 
+    position: relative;
+    color: #333;
+}
+
+
+
+
+/* Donation As Anonymous Section */
+.form-container-donate2 {
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 600px;
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    margin: 3% auto 0;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-container-donate2 .form-section  {
+    display: flex;
+}
+
+/* This sections creates the grid-like structure for the Donation Page */
+/* The firstchild of elements in Each Form-section */
+.form-container-donate2 .form .form-section .form-control:nth-child(1){
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.form-container-donate2 .form .form-section .form-control:nth-child(1) label{flex: 100%; }
+.form-container-donate2 .form .form-section  .form-control:nth-child(1) input {
+    flex: 1;
+    margin-right: 0.5rem;
+}
+.form-container-donate2 .form .form-section .form-control:nth-child(1) #expmonth2 {flex: 1;}
+.form-container-donate2 .form .form-section .form-control:nth-child(2) {flex: 1;}
+
+
+.form-container-donate2 .form .form-section .form-control:nth-child(2) label[for="Exp Month"] {
+    opacity: 0;
+}
+
+
+
+.form-container-donate2 .form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-container-donate2 .form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-container-donate2 .form-control.success input {
+    border-color: #2ecc71;
+}
+
+.form-container-donate2 .form-control.error input {
+    border-color: #e74c3c;
+}
+
+.form-container-donate2 .form-control small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.form-container-donate2 .form-control.error small {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-container-donate2 .form-control textarea {
+    border: 2px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    resize: none;
+}
+.form-container-donate2.active {
+    transform: translate(-50%, -50%) scale(0);
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sign-Up */
+.form-container {
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 500px;
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    margin: 3% auto 0;
+    text-align: left;
+}
+
+.form-container .form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-container .form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-container .form-control.success input {
+    border-color: #2ecc71;
+}
+
+.form-container .form-control.error input {
+    border-color: #e74c3c;
+}
+
+.form-container .form-control small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.form-container .form-control.error small {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-container .form-control textarea {
+    border: 2px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    resize:vertical;
+}
+
+
+
+
+
+
+
+
+
+
+/* Results Page after Every SuccessFul Donation*/
+.form-container.active {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.results-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    position: fixed;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    z-index: 1;
+}
+
+.results-container.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="text/javascript" defer src="/js/main.js"></script>
+  <link type="text/css" rel="stylesheet" media="screen and (max-width:1160px)" href="css/widescreen.css">
+  <link type="text/css" rel="stylesheet" media="screen and (max-width:768px)" href="css/mobile.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>globalHelpers | Sign Up</title>
+</head>
+<body class="bg-color">
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <h1 class="logo" >
+          <a href="index.html"><img src="img/LOGO.png" alt="The Logo"></a>
+        </h1>
+    </nav>
+    
+
+    <!-- This is the container for the Form -->
+    <div class="form-container">
+      <div class="form-header"><h2>Sign Up Now</h2></div>
+
+
+      <form class="form "id="form">
+        <div class="form-control">
+          <label>Full Name</label>
+          <input type="text" placeholder="Jrue M. Holiday" id="username">
+          <small>Error Message</small>
+        </div>
+
+        <div class="form-control">
+          <label>Email</label>
+          <input type="email" placeholder="jrueMholiday@gmail.com" id="email">
+          <small>Error Message</small>
+        </div>
+        
+        <div class="form-control">
+          <label>Message</label>
+          <textarea name="subject" class="form-control error" 
+          placeholder="Why you would love to help(Optional)?" ></textarea>
+        </div>
+
+        <p><span><input type="checkbox" required></span> I agree to the terms of services</p>
+          <button type="submit" class="btn form-button">Sign Up</button>
+      </form>
+    </div>
+    <div class="results-container">
+      <p class="text-center"></p>
+      <p class="text-center"></p>
+      <br/>
+      <a class="btn text-center form-button" href="index.html">Back to Home Page</a>
+    </div>
+    
+
+    <script>
+      const form = document.getElementById('form');
+      const form_container = document.querySelector('.form-container')
+      const username = document.getElementById('username');
+      const email = document.getElementById('email');
+      const results_container = document.querySelector('.results-container');
+      // const button = document.getElementById('button')
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+
+        checkInputs();
+      });
+
+
+    function checkInputs() {
+      // trim to remove the whitespaces
+      const usernameValue = username.value.trim();
+      const emailValue = email.value.trim();
+      
+        if (usernameValue === '') {
+          setErrorFor(username, 'Field Requiered');
+        } 
+        else {
+        setSuccessFor(username)
+        } 
+
+        
+        if(emailValue === '') {
+          setErrorFor(email, 'Field Requiered');
+        } 
+        else if (!isEmail(emailValue)) {
+          setErrorFor(email, 'Not a valid email');
+        } 
+        else {
+        setSuccessFor(email);
+        }
+        
+        if(emailValue , usernameValue !== '') {
+          message(usernameValue)
+        }
+          
+
+      return
+      
+    }
+
+    // This is for the message which wil display the User's Input
+    // If User's Input are correct
+    function message(usernameValue) {
+      form_container.classList.add('active')
+      results_container.classList.add('active')
+      message = `Thank you for signing up ${usernameValue}.\nCheck your email to verify your account`
+      const p = results_container.querySelector('p')
+      p.innerText = message
+
+      // const button = results_container.querySelector('button')
+      // button.addEventListener('click', () => {
+      //   window.location="index.html"
+      // })
+    }
+
+    
+    // This is for the error
+    function setErrorFor(input, message) {
+        const formControl = input.parentElement;
+        const small = formControl.querySelector('small');
+        formControl.className = 'form-control error';
+        small.innerText = message;
+    }
+
+    // This is for the success of User inputing the right details
+    function setSuccessFor(input) {
+        const formControl = input.parentElement;
+        formControl.className = 'form-control success';
+    }
+
+    // This is to check emails
+    function isEmail(email) {
+        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    }
+    </script>
+    
+    
+    
+</body>
+</html>

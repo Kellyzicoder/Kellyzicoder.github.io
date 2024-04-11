@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <link type="text/css" rel="stylesheet" media="screen and (max-width:1160px)" href="css/widescreen.css">
+  <link type="text/css" rel="stylesheet" media="screen and (max-width:768px)" href="css/mobile.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" href="css/style.css" />
+  <title>globalHelpers | Create an account</title>
+</head>
+<body class="bg-color">
+    <!-- Navbar -->
+    <nav id="navbar">
+        <h1 class="logo">
+          <a href="index.html"><img src="img/LOGO.png" alt="The Logo"></a>
+        </h1>
+    </nav>
+  
+    
+
+    <!-- This is the container for the Form -->
+    <div class="form-container-donate">
+      <div class="form-header"><h2>Create an Account</h2></div>
+
+      <form class="form" id="form">
+        <div class="form-section">
+          <div class="form-control">
+            <label for="">FirstName</label>
+            <input type="text" placeholder="Jrue" id="firstname">
+            <small>Error Message</small>
+          </div>
+          <div class="form-control">
+            <label for="">Lastname</label>
+            <input type="text" placeholder="Holiday" id="lastname">
+            <small>Error Message</small>
+          </div>
+        </div>
+        <div class="form-section">
+          <div class="form-control">
+            <label for="">Password</label>
+            <input type="password" placeholder="Password" id="password">
+            <small>Error Message</small>
+          </div>
+          <div class="form-control">
+            <label for="">Password Check</label>
+            <input type="password" placeholder="Password" id="password2">
+            <small>Error Message</small>
+          </div>
+        </div>
+        <div class="form-control">
+          <label for="">Email</label>
+          <input type="email" placeholder="jrueMholiday@gmail.com" id="email">
+          <small>Error Message</small>
+        </div>
+
+        <button class="btn form-button">Submit</button>
+        
+      </form>
+    </div>
+
+
+    <!-- Shows the results of the User's Inputs -->
+    <form class="form" id="form4">
+      <div class="results-container">
+        <div class="form-header">
+          <h2>Successful Payment</h2>
+        </div>
+          <p class="text-center"></p>
+          <br/>
+          <a class="btn text-center form-button" href="index.html">Back to Home Page</a>
+        </div>
+    </form>
+    <div id="overlay2"></div>
+    
+
+    <script>
+      const form = document.getElementById('form');
+      const firstname = document.getElementById('firstname');
+      const lastname = document.getElementById('lastname');
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
+      const password2 = document.getElementById('password2');
+      const form_container_donate = document.querySelector(".form-container-donate");
+      const results_container = document.querySelector(".results-container");
+      const overlay2 = document.getElementById("overlay2");
+
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        
+        checkInputs();
+      });
+
+      function checkInputs() {
+        // trim to remove the whitespaces
+        const firstnameValue = firstname.value.trim();
+        const lastnameValue = lastname.value.trim();
+        const emailValue = email.value.trim();
+        const passwordValue = password.value.trim();
+        const password2Value = password2.value.trim();
+        
+        if(firstnameValue === '') {
+            setErrorFor(firstname, 'Field Requiered');
+        } else {
+          setSuccessFor(firstname);
+        }
+        if(lastnameValue === '') {
+            setErrorFor(lastname, 'Field requiered');
+        } else {
+          setSuccessFor(lastname);
+        }
+        
+        
+        if(emailValue === '') {
+          setErrorFor(email, 'Field requiered');
+        } else if (!isEmail(emailValue)) {
+          setErrorFor(email, 'Not a valid email');
+        } else {
+          setSuccessFor(email);
+        }
+        
+        if(passwordValue === '') {
+          setErrorFor(password, 'Field requiered');
+        } else {
+          setSuccessFor(password);
+        }
+        
+        if(password2Value === '') {
+          setErrorFor(password2, 'Field requiered');
+        } else if(passwordValue !== password2Value) {
+          setErrorFor(password2, 'Passwords does not match');
+        } else{
+          setSuccessFor(password2);
+        }
+
+        if(emailValue , firstnameValue, lastnameValue !== '') {
+          message(firstnameValue, lastnameValue)
+        }
+      }
+
+        
+      // This is for the error
+      function setErrorFor(input, message) {
+        const formControl = input.parentElement;
+        const small = formControl.querySelector('small');
+        formControl.className = 'form-control error';
+        small.innerText = message;
+      }
+
+      // This is for the message which wil display the User's Input
+      // If User's Input are correct
+      function message(firstnameValue, lastnameValue) {
+        // form_container_donate.classList.add("active");
+        results_container.classList.add("active");
+        overlay2.classList.add('active')
+
+        message = `Thank you for signing up ${firstnameValue} ${lastnameValue}. \nCheck your email to verify your account`
+        const p = results_container.querySelector('p')
+        p.innerText = message
+
+    }
+      
+      // This is for the success of User inputing the right details
+      function setSuccessFor(input) {
+        const formControl = input.parentElement;
+        formControl.className = 'form-control success';
+      }
+      
+      // This is to check emails
+      function isEmail(email) {
+        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+      }
+    </script>
+
+
+    
+</body>
+</html>

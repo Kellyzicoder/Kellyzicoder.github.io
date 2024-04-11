@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="uft-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script defer src="/js/main.js"></script>
+  <script
+  src="https://kit.fontawesome.com/de285267ff.js" crossorigin="anonymous"></script>
+  <link type="text/css" rel="stylesheet" media="screen and (max-width:1160px)" href="css/widescreen.css">
+  <link type="text/css" rel="stylesheet" media="screen and (max-width:768px)" href="css/mobile.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" href="css/style.css" />
+  <title>globalHelpers | Donation Page</title>
+</head>
+
+<body class="bg-color">
+  <!-- Navbar -->
+  <nav id="navbar">
+    <h1 class="logo" href="index.html">
+      <a href="index.html"><img src="img/LOGO.png" alt="The Logo"></a>
+    </h1>
+  </nav>
+
+
+  <!-- This is the Section for Amounts
+  The User Inputs the Amount they want to give -->
+  <div class="results-container-amount">
+    <div class="form-header">
+      <h2>Make a Donation</h2>
+    </div>
+    <p>To help raise funds for Afghan crisis</p>
+    <form class="form" id="form1">
+
+      <div class="form-section">
+        <div class="form-control">
+          <label for="">Amount</label>
+          <p>$</p>
+          <input type="number" id="amount" placeholder="1" />
+          <small>Error Message</small>
+        </div>
+        <div class="form-control">
+          <div>
+            <input type="radio" name="paymentmethod" id="Anonymous" value="a" required></input>
+            <label for="Anonymous">Anonymous</label>
+          </div>
+          <div>
+            <input type="radio" name="paymentmethod" id="NotAnonymous" value="b" required>
+            <label for="Not Anonymous">Not Anonymous</label>
+          </div>
+          <small>Error Message</small>
+        </div>
+        
+      </div>
+
+      <button class="btn form-button">Proceed To Payment</button>
+    </form>
+
+  </div>
+
+
+  <!-- Not Anonymous Section -->
+  <div class="form-container-donate active">
+    <div class="form-header">
+      <h2>Payment</h2>
+    </div>
+
+    <form class="form" id="form2">
+      <h3>Billing Info</h3>
+      <br />
+      <div class="form-section">
+        <div class="form-control">
+          <label for="">Firstname</label>
+          <input type="text" placeholder="Jrue" id="firstname" />
+          <small>Error Message</small>
+        </div>
+        <div class="form-control">
+          <label for="">Lastname</label>
+          <input type="text" placeholder="Holiday" id="lastname" />
+          <small>Error Message</small>
+        </div>
+      </div>
+      <div class="form-control">
+        <label for="">Email</label>
+        <input type="email" placeholder="JrueHolidayM@gmail.com - So we can send you a receipt" id="email" />
+        <small>Error Message</small>
+      </div>
+
+
+      <h3>Account Details</h3>
+      <br />
+      <div class="form-control">
+        <label for="">Accepted Cards</label>
+        <div class="icon-container">
+          <i class="fa fa-cc-visa" style="color: navy"></i>
+          <i class="fa fa-cc-amex" style="color: blue"></i>
+          <i class="fa fa-cc-mastercard" style="color: red"></i>
+          <i class="fa fa-cc-discover" style="color: orange"></i>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-control">
+          <label for="">Name on Card</label>
+          <input type="text" placeholder="J Holiday" id="cname" />
+          <small>Error Message</small>
+        </div>
+        <div class="form-control">
+          <label for="">Credit card number</label>
+          <input type="number" placeholder="1111222233334444" id="ccnum" maxlength="19" />
+          <small>Error Message</small>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-control">
+          <label for="ExpDate">Exp Date</label>
+          <input type="text" placeholder="08" id="expmonth" maxlength="2" min="1" />
+          <input type="text" placeholder="21" id="expyear" maxlength="2" />
+          <small>Error Message</small>
+        </div>
+        <div class="form-control">
+          <label for="CVV">CVV</label>
+          <input type="text" placeholder="352" id="cvv" maxlength="3" />
+          <small>Error Message</small>
+        </div>
+      </div>
+
+      <button class="btn form-button">Submit</button>
+
+    </form>
+
+    <a class="bottomlink" href="accountcreation.html">Do you have an account? Create one</a>
+
+  </div>
+
+
+  <!-- Anonymous Section -->
+  <div class="form-container-donate2 active">
+    <div class="form-header">
+      <h2>Payment</h2>
+    </div>
+
+    <form class="form" id="form3">
+
+      <h3>Account Details</h3>
+      <br />
+      <div class="form-control">
+        <label for="">Accepted Cards</label>
+        <div class="icon-container">
+          <i class="fa fa-cc-visa" style="color: navy"></i>
+          <i class="fa fa-cc-amex" style="color: blue"></i>
+          <i class="fa fa-cc-mastercard" style="color: red"></i>
+          <i class="fa fa-cc-discover" style="color: orange"></i>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-control">
+          <label for="">Name on Card</label>
+          <input type="text" placeholder="J Holiday" id="cname2"/>
+          <small>Error Message</small>
+        </div>
+        <div class="form-control">
+          <label for="">Credit card number</label>
+          <input type="number" placeholder="1111222233334444" id="ccnum2" maxlength="16" />
+          <small>Error Message</small>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-control">
+          <label for="ExpDate">Exp Date</label>
+          <input type="text" placeholder="08" id="expmonth2" maxlength="2" min="2"/>
+          <input type="number" placeholder="23" id="expyear2" maxlength="2" min="2"/>
+          <small>Error Message</small>
+        </div>
+        <div class="form-control">
+          <label for="CVV">CVV</label>
+          <input type="text" placeholder="352" id="cvv2" maxlength="3" />
+          <small>Error Message</small>
+        </div>
+      </div>
+
+      <button type="submit" class="btn form-button">Submit</button>
+    </form>
+
+    <a class="bottomlink" href="accountcreation.html">Do you have an account? Create one</a>
+  </div>
+
+
+
+
+  <!-- Shows the results of the User's Inputs -->
+  <form class="form" id="form4">
+    <div class="results-container">
+      <div class="form-header">
+        <h2>Successful Payment</h2>
+      </div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <br/>
+        <a class="btn text-center form-button" href="index.html">Back to Home Page</a>
+      </div>
+  </form>
+  <div id="overlay2"></div>
+  
+
+
+
+  <script>
+
+    const overlay2 = document.getElementById("overlay2");
+    const form1 = document.getElementById("form1");
+    const form2 = document.getElementById("form2");
+    const form3 = document.getElementById("form3");
+
+    const form_container_donate = document.querySelector(".form-container-donate");
+    const form_container_donate2 = document.querySelector(".form-container-donate2");
+    const results_container_amount = document.querySelector(".results-container-amount");
+    const results_container = document.querySelector(".results-container");
+
+    const amount = document.getElementById("amount");
+    const anonymous = document.getElementById("Anonymous");
+    const Notanonymous = document.getElementById("NotAnonymous");
+
+    const firstname = document.getElementById("firstname");
+    const lastname = document.getElementById("lastname");
+    const email = document.getElementById("email");
+    const cname = document.getElementById("cname");
+    const ccnum = document.getElementById("ccnum");
+    const expyear = document.getElementById("expyear");
+    const expmonth = document.getElementById("expmonth");
+    const cvv = document.getElementById("cvv");
+
+    const cname2 = document.getElementById("cname2");
+    const ccnum2 = document.getElementById("ccnum2");
+    const expyear2 = document.getElementById("expyear2");
+    const expmonth2 = document.getElementById("expmonth2");
+    const cvv2 = document.getElementById("cvv2");
+
+    const input = document.querySelector("input");
+    const button = results_container.querySelector("button");
+
+    form1.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // This is to validate the Amount Page Section
+      // If not empty, then proceed to the Page with Each Payment Method
+      validate(amount, anonymous, Notanonymous);
+      const amountValue = amount.value;
+      if (validate(amount, anonymous, Notanonymous) == anonymous) {
+        checkbox2();
+
+        form3.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          checkInputs2(amountValue);
+        });
+      } else if (validate(amount, anonymous, Notanonymous) == Notanonymous) {
+        checkbox1();
+
+        form2.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          checkInputs(amountValue);
+        });
+      }
+    });
+
+    function checkInputs(amountValue) {
+      const firstname_s = ["John", "Jeff", "Ben", "Gideon", "Kevin"];
+      const lastname_s = ["Frimpong", "Heburch", "Sampson", "Mensah", "Hart"];
+      const email_s = [
+        "johnfrimmy@gmail.com",
+        "jeffheburch@yahoo.com",
+        "bensampson@gamil.com",
+        "gnmensah@gmail.com",
+        "kevinhart@gmail.com"
+      ];
+      const cname_s = ["J Frimmy", "J Heburch", "B Sampson", "G Mensah", "Kevin Hart"];
+      const ccnum_s = ['2222400070000005', "4111111111111111", "0320004500200120", "2333333333333333", "5733333333333956"];
+      const expyear_s = ["20", "19", "21", "22", "26"];
+      const expmonth_s = [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+      ];
+      const cvv_s = ["345", "245", "323", "985", "200"];
+
+
+
+      // Check if these exist
+      const firstnameValue = firstname.value;
+      const lastnameValue = lastname.value;
+      const emailValue = email.value.trim();
+      const cnameValue = cname.value;
+      const ccnumValue = ccnum.value;
+      const expyearValue = expyear.value;
+      const expmonthValue = expmonth.value;
+      const cvvValue = cvv.value;
+
+      // Chekcing if the inputs are in the arrays
+      const find = firstname_s.includes(firstnameValue);
+      const find_lastname = lastname_s.includes(lastnameValue);
+
+      const find_email = email_s.includes(emailValue);
+      const find_cname = cname_s.includes(cnameValue);
+      const find_ccnum = ccnum_s.includes(ccnumValue);
+      const find_expyear = expyear_s.includes(expyearValue);
+      const find_expmonth = expmonth_s.includes(expmonthValue);
+      const find_cvv = cvv_s.includes(cvvValue);
+
+      if (firstnameValue === "") {
+        setErrorFor(firstname, "Field Requiered");
+      } else if (find !== true) {
+        setErrorFor(firstname, "Invalid firstname");
+      } else if (find === true) {
+        setSuccessFor(firstname);
+      }
+      var firstname_number = firstname_s.indexOf(firstname);
+
+      if (lastnameValue === "") {
+        setErrorFor(lastname, "Field Requiered");
+      } else if (find_lastname !== true) {
+        setErrorFor(lastname, "Invalid firstname");
+      } else if (find === true) {
+        setSuccessFor(lastname);
+      }
+      var lastname_number = lastname_s.indexOf(lastname);
+
+      if (emailValue === "") {
+        setErrorFor(email, "Field Requiered");
+      } else if (!isEmail(emailValue)) {
+        setErrorFor(email, "Invalid email");
+      } else if (find_email !== true) {
+        setErrorFor(email, "Its not Valid");
+      } else if (find_email === true) {
+        setSuccessFor(email);
+      }
+      var email_number = email_s.indexOf(email);
+
+
+      if (cnameValue === "") {
+        setErrorFor(cname, "Field Requiered");
+      } else if (find_cname !== true) {
+        setErrorFor(cname, "Invalid Card Name");
+      } else if (find_cname === true) {
+        setSuccessFor(cname);
+      }
+      var cname_number = cname_s.indexOf(cname);
+
+      if (ccnumValue === "") {
+        setErrorFor(ccnum, "Field Requiered");
+      } else if (find_ccnum !== true) {
+        setErrorFor(ccnum, "Invalid Card number");
+      } else if (find_ccnum === true) {
+        setSuccessFor(ccnum);
+      }
+      var ccnum_number = ccnum_s.indexOf(ccnum);
+
+      if (expyearValue === "") {
+        setErrorFor(expyear, "Field Requiered");
+      } else if (find_expyear !== true) {
+        setErrorFor(expyear, "Invalid Card year");
+      } else if (find_expyear === true) {
+        setSuccessFor(expyear);
+      }
+      var expyear_number = expyear_s.indexOf(expyear);
+
+      if (expmonthValue === "") {
+        setErrorFor(expmonth, "Field Requiered");
+      } else if (find_expmonth !== true) {
+        setErrorFor(expmonth, "Invalid Card month");
+      } else if (find_expmonth === true) {
+        setSuccessFor(expmonth);
+      }
+      var expmonth_number = expmonth_s.indexOf(expmonth);
+
+      if (cvvValue === "") {
+        setErrorFor(cvv, "Field Requiered");
+      } else if (find_cvv !== true) {
+        setErrorFor(cvv, "Invalid CVV");
+      } else if (find_cvv === true) {
+        setSuccessFor(cvv);
+      }
+      var cvv_number = cvv_s.indexOf(cvv);
+
+      while (
+        (find &&
+          find_email &&
+          find_cname &&
+          find_ccnum &&
+          find_cvv &&
+          find_expmonth &&
+          find_expyear === true)
+      ) {
+        if (firstname_number !== email_number) {
+          setErrorFor(email, "Invalid");
+          break;
+        } else if (firstname_number !== cname_number) {
+          setErrorFor(cname, "Invalid");
+          break;
+        } else if (firstname_number !== ccnum_number) {
+          setErrorFor(ccnum, "Invalid");
+          break;
+        } else if (firstname_number !== expmonth_number) {
+          setErrorFor(expmonth, "Invalid");
+          break;
+        } else if (firstname_number !== expyear_number) {
+          setErrorFor(expyear, "Invalid");
+          break;
+        } else if (firstname_number !== cvv_number) {
+          setErrorFor(cvv, "Invalid");
+          break;
+        } else if (firstname_number == cvv_number, expyear_number, 
+        expmonth_number, ccnum_number, cname_number, email_number ){
+          PaymentSuccess(amountValue, ccnumValue, cnameValue);
+          break;
+        }
+      }
+    }
+
+    function checkInputs2(amountValue) {
+
+      // Check if these exist
+      const cnameValue2 = cname2.value;
+      const ccnumValue2 = ccnum2.value;
+      const expyearValue2 = expyear2.value;
+      const expmonthValue2 = expmonth2.value;
+      const cvvValue2 = cvv2.value;
+      const expmonth_s = [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+    ];
+      find_expmonth = expmonth_s.includes(expmonthValue2)
+
+      if (cnameValue2 == "") {
+        setErrorFor(cname2, "Field Requiered");
+      } else {
+        setSuccessFor(cname2);
+      }
+      
+
+      if (ccnumValue2 == "") {
+        setErrorFor(ccnum2, "Field Requiered");
+      } else {
+        setSuccessFor(ccnum2);
+        var true_ccnum = true;
+      }
+      
+
+      if (expyearValue2 == "") {
+        setErrorFor(expyear2, "Field Requiered");
+      } else if (expyearValue2 < 19 || expyearValue2 > 29) {
+        setErrorFor(expyear2, "Invalid Input");
+      } else {
+        setSuccessFor(expyear2);
+        var true_expyear = true;
+      }
+      
+
+      if (expmonthValue2 == "") {
+        setErrorFor(expmonth2, "Field Requiered");
+      } else if (find_expmonth !== true) {
+        setErrorFor(expmonth2, "Invalid Input");
+      } else {
+        setSuccessFor(expmonth2);
+        var true_expmonth = true;
+      }
+      
+
+      if (cvvValue2 == "") {
+        setErrorFor(cvv2, "Field Requiered");
+      } else {
+        setSuccessFor(cvv2); 
+        var true_cvv = true;
+      }
+      
+        if(cnameValue2 && ccnumValue2 && expyearValue2 && expmonthValue2 && cvvValue2 !== null, 
+        find_expmonth == true , expyearValue2 > 19 && expyearValue2 < 30) {
+            PaymentSuccess(amountValue, ccnumValue2, cnameValue2); 
+        } 
+    }
+
+    function PaymentSuccess(amountValue, ccnumValue2, cnameValue2) {
+      // form_container_donate.classList.add("active");
+      results_container.classList.add("active");
+      overlay2.classList.add('active')
+
+
+      message = `Amount Paid: $${amountValue}`;
+      const p1 = results_container.querySelector("p");
+      p1.innerText = message;
+
+      message2 = `From:  ${cnameValue2}`;
+      const p2 = results_container.querySelector("p:nth-child(3)");
+      p2.innerText = message2;
+
+      message3 = `Account Number: ${ccnumValue2}`;
+      const p3 = results_container.querySelector("p:nth-child(4)");
+      p3.innerText = message3;
+
+      // const button = results_container.querySelector("button");
+      // button.addEventListener("submit", (e) => {
+      //   window.location = "index.html";
+      // });
+    }
+
+    function setErrorFor(input, message) {
+      const formControl = input.parentElement;
+      const small = formControl.querySelector("small");
+      formControl.className = "form-control error";
+      small.innerText = message;
+    }
+
+    function setSuccessFor(input) {
+      const formControl = input.parentElement;
+      formControl.className = "form-control success";
+    }
+
+    function isEmail(email) {
+      return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        email
+      );
+    }
+
+    function validate(amount, anonymous, Notanonymous) {
+      if(anonymous.checked && Notanonymous.checked) {
+        setErrorFor(amount, "Field Requiered");
+      }
+      
+      if (amount.value >= 1) {
+        setSuccessFor(amount);
+      } else {
+        setErrorFor(amount, "Field Requiered");
+      }
+
+      while(amount.value >= 1) {
+        if (anonymous.checked && amount.value >= 1) {
+          return anonymous;
+          break
+        } else if (Notanonymous.checked && amount.value >= 1) {
+          return Notanonymous;
+          break
+        } else {
+          break
+        }
+      }
+    }
+
+    function checkbox1() {
+      form_container_donate.classList.remove("active");
+      results_container_amount.classList.add("active");
+    }
+
+    function checkbox2() {
+      results_container_amount.classList.add("active");
+      form_container_donate2.classList.remove("active");
+    }
+
+
+
+  </script>
+</body>
+
+</html>
