@@ -157,7 +157,7 @@ hr {
 
 #showcase:before {
     content: '';
-    background: url('/img/_119955696_d620980e-a25c-49b8-aa5b-f0afc4da816d.jpg') no-repeat center center/cover;
+    background: url('img/_119955696_d620980e-a25c-49b8-aa5b-f0afc4da816d.jpg') no-repeat center center/cover;
     position: absolute;
     top: 0;
     left: 0;
